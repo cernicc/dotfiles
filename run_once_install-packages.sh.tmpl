@@ -1,0 +1,4 @@
+{{- if (and (eq .chezmoi.os "linux") (not .codespaces)) -}}
+#!/bin/sh
+echo "Install packages here"
+{{- end -}}

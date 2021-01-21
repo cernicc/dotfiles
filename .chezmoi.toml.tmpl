@@ -1,7 +1,11 @@
-{{- $email := promptString "email" -}}
-{{- $fullname := promptString "fullname" -}}
+{{- $codespaces:= env "CODESPACES" | not | not -}}
+sourceDir = "{{ .chezmoi.sourceDir }}"
 
 [data]
-    [data.github]
-        fullname = "{{ $fullname }}"
-        email = "{{ $email }}"
+  fullname = "Rok Černič"
+  codespaces = {{ $codespaces }}
+{{- if $codespaces }}{{/* Codespaces dotfiles setup is non-interactive, so set an email address */}}
+  email = "rok.cernic@gmail.com"
+{{- else }}{{/* Interactive setup, so prompt for an email address */}}
+  email = "{{ promptString "email" }}"
+{{- end }}
