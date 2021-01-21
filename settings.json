@@ -16,5 +16,5 @@
     "jest.autoEnable": false,
     "liveshare.presence": true,
     "window.zoomLevel": 0,
-    "workbench.startupEditor": "newUntitledFile",
+    "workbench.startupEditor": "newUntitledFile"
 }
