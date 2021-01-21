@@ -1,3 +1,5 @@
+{{- if (index . "github") -}}
 [user]
-	name = {{ .fullname }}
-	email = {{ .email }}
+	name = {{ .github.fullname }}
+	email = {{ .github.email }}
+{{- end }}

@@ -2,5 +2,6 @@
 {{- $fullname := promptString "fullname" -}}
 
 [data]
-    fullname = "{{ $fullname }}"
-    email = "{{ $email }}"
+    [data.github]
+        fullname = "{{ $fullname }}"
+        email = "{{ $email }}"
