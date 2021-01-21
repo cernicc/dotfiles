@@ -2,6 +2,11 @@
 
 set -e # -e: exit on error
 
+if [[ $* == *--container* ]]; then
+  echo "Running in container mode."
+  export CODESPACES=true
+fi
+
 if [ ! "$(command -v chezmoi)" ]; then
   bin_dir="$HOME/.local/bin"
   chezmoi="$bin_dir/chezmoi"
